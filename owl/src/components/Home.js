@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash'
 import faker from 'faker'
-import { Menu, Segment, Input, Image, Container, Grid, Search, Header, Icon } from 'semantic-ui-react';
+import { Menu, Segment, Input, Image, Container, Grid, Search, Header, Icon, Card } from 'semantic-ui-react';
 
 
 const initialState = { isLoading: false, results: [], value: '' }
@@ -50,7 +50,7 @@ export default class Home extends React.Component {
                         <Grid.Column width={5}>
                             {/* right side placeholder */}
                         </Grid.Column>
-
+                        {/* Search bar ======================================================================================================================== */}
                         <Grid.Column width={6} style={{ paddingTop: '20%' }}>
 
                             <Header as='h1' textAlign='center' style={{ color: 'white' }}>
@@ -80,24 +80,88 @@ export default class Home extends React.Component {
 
                     </Grid.Row>
 
-                    <Grid.Row>
+                    {/* Trending bar ======================================================================================================================== */}
 
-                        <Grid.Column width={2}>
-                        </Grid.Column>
-
-                        <Grid.Column width={12}>
-                            <Segment>
-                                <div>Hey</div>
-
-                            </Segment>
-
-                        </Grid.Column>
-
-                        <Grid.Column width={2}>
-                        </Grid.Column>
-
+                    <Grid.Row verticalAlign='center' style={{ paddingTop: '15%' }}>
+                        <Header as='h2' textAlign='center' style={{ paddingLeft: '45%', color: 'white' }}>
+                            <Icon name='chart line' color='green' />
+                            <Header.Content>Trending</Header.Content>
+                        </Header>
                     </Grid.Row>
 
+                    <Grid.Row verticalAlign='center'>
+
+                        <Grid.Column width={4}>
+                            <Card>
+                                <Card.Content>
+                                    <Image
+                                        floated='left'
+                                        size='mini'
+                                        src={faker.internet.avatar()}
+                                    />
+                                    <Card.Header>{faker.name.findName()}</Card.Header>
+                                    <Card.Meta>Friends of Elliot</Card.Meta>
+                                    <Card.Description>
+                                        Steve wants to add you to the group <strong>best friends</strong>
+                                    </Card.Description>
+                                </Card.Content>
+                            </Card>
+                        </Grid.Column>
+
+                        <Grid.Column width={4}>
+                            <Card>
+                                <Card.Content>
+                                    <Image
+                                        floated='left'
+                                        size='mini'
+                                        src={faker.internet.avatar()}
+                                    />
+                                    <Card.Header>{faker.name.findName()}</Card.Header>
+                                    <Card.Meta>Friends of Elliot</Card.Meta>
+                                    <Card.Description>
+                                        Steve wants to add you to the group <strong>best friends</strong>
+                                    </Card.Description>
+                                </Card.Content>
+                            </Card>
+                        </Grid.Column>
+
+                        <Grid.Column width={4}>
+                            <Card>
+                                <Card.Content>
+                                    <Image
+                                        floated='left'
+                                        size='mini'
+                                        src={faker.internet.avatar()}
+                                    />
+                                    <Card.Header>{faker.name.findName()}</Card.Header>
+                                    <Card.Meta>Friends of Elliot</Card.Meta>
+                                    <Card.Description>
+                                        Steve wants to add you to the group <strong>best friends</strong>
+                                    </Card.Description>
+                                </Card.Content>
+                            </Card>
+                        </Grid.Column>
+
+                        <Grid.Column width={4}>
+                            <Card>
+                                <Card.Content>
+                                    <Image
+                                        floated='left'
+                                        size='mini'
+                                        src={faker.internet.avatar()}
+                                    />
+                                    <Card.Header>{faker.name.findName()}</Card.Header>
+                                    <Card.Meta>Friends of Elliot</Card.Meta>
+                                    <Card.Description>
+                                        Steve wants to add you to the group <strong>best friends</strong>
+                                    </Card.Description>
+                                </Card.Content>
+                            </Card>
+                        </Grid.Column>
+
+
+
+                    </Grid.Row>
 
                 </Grid>
             </Container>
