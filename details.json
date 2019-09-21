@@ -1,0 +1,37 @@
+[
+    {
+        "fullName": "Marcel Jones I",
+        "jobTitle": "Internal Accounts Architect",
+        "prefix": "Mrs.",
+        "jobDescriptor": "Internal",
+        "jobType": "Facilitator"
+    },
+    {
+        "fullName": "Dena Koepp",
+        "jobTitle": "Internal Mobility Designer",
+        "prefix": "Dr.",
+        "jobDescriptor": "Future",
+        "jobType": "Executive"
+    },
+    {
+        "fullName": "Kasandra Price",
+        "jobTitle": "Lead Directives Facilitator",
+        "prefix": "Mr.",
+        "jobDescriptor": "Forward",
+        "jobType": "Liaison"
+    },
+    {
+        "fullName": "Cameron Hermiston",
+        "jobTitle": "Internal Applications Technician",
+        "prefix": "Ms.",
+        "jobDescriptor": "Direct",
+        "jobType": "Assistant"
+    },
+    {
+        "fullName": "Kenny Prohaska",
+        "jobTitle": "Investor Configuration Specialist",
+        "prefix": "Ms.",
+        "jobDescriptor": "Investor",
+        "jobType": "Engineer"
+    }
+]
