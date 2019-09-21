@@ -1,18 +1,37 @@
 import React from 'react';
-import _ from 'lodash'
-import faker from 'faker'
+import _ from 'lodash';
+import faker from 'faker';
 import { Menu, Segment, Input, Image, Container, Grid, Search, Header, Icon, Card } from 'semantic-ui-react';
 
 
 const initialState = { isLoading: false, results: [], value: '' }
 
 const source = _.times(5, () => ({
-    title: faker.company.companyName(),
-    description: faker.company.catchPhrase(),
-    image: faker.internet.avatar(),
-    price: faker.finance.amount(0, 100, 2, '$'),
+    title: faker.name.findName(),
+    description: faker.name.jobTitle(),
+    image: faker.internet.avatar()
 }))
 
+const userCard1 = {
+    name: faker.name.findName(),
+    picture: faker.internet.avatar(),
+    job: faker.name.jobTitle()
+}
+const userCard2 = {
+    name: faker.name.findName(),
+    picture: faker.internet.avatar(),
+    job: faker.name.jobTitle()
+}
+const userCard3 = {
+    name: faker.name.findName(),
+    picture: faker.internet.avatar(),
+    job: faker.name.jobTitle()
+}
+const userCard4 = {
+    name: faker.name.findName(),
+    picture: faker.internet.avatar(),
+    job: faker.name.jobTitle()
+}
 
 export default class Home extends React.Component {
 
@@ -97,12 +116,12 @@ export default class Home extends React.Component {
                                     <Image
                                         floated='left'
                                         size='mini'
-                                        src={faker.internet.avatar()}
+                                        src={userCard1.picture}
                                     />
-                                    <Card.Header>{faker.name.findName()}</Card.Header>
-                                    <Card.Meta>Friends of Elliot</Card.Meta>
+                                    <Card.Header>{userCard1.name}</Card.Header>
+                                    <Card.Meta>Guitar Lessons</Card.Meta>
                                     <Card.Description>
-                                        Steve wants to add you to the group <strong>best friends</strong>
+                                        Looking for swimming instructor
                                     </Card.Description>
                                 </Card.Content>
                             </Card>
@@ -114,12 +133,12 @@ export default class Home extends React.Component {
                                     <Image
                                         floated='left'
                                         size='mini'
-                                        src={faker.internet.avatar()}
+                                        src={userCard2.picture}
                                     />
-                                    <Card.Header>{faker.name.findName()}</Card.Header>
-                                    <Card.Meta>Friends of Elliot</Card.Meta>
+                                    <Card.Header>{userCard2.name}</Card.Header>
+                                    <Card.Meta>Boxing</Card.Meta>
                                     <Card.Description>
-                                        Steve wants to add you to the group <strong>best friends</strong>
+                                        Looking for programmer
                                     </Card.Description>
                                 </Card.Content>
                             </Card>
@@ -131,12 +150,12 @@ export default class Home extends React.Component {
                                     <Image
                                         floated='left'
                                         size='mini'
-                                        src={faker.internet.avatar()}
+                                        src={userCard3.picture}
                                     />
-                                    <Card.Header>{faker.name.findName()}</Card.Header>
-                                    <Card.Meta>Friends of Elliot</Card.Meta>
+                                    <Card.Header>{userCard3.name}</Card.Header>
+                                    <Card.Meta>Web Development</Card.Meta>
                                     <Card.Description>
-                                        Steve wants to add you to the group <strong>best friends</strong>
+                                        Looking for haircut
                                     </Card.Description>
                                 </Card.Content>
                             </Card>
@@ -148,12 +167,12 @@ export default class Home extends React.Component {
                                     <Image
                                         floated='left'
                                         size='mini'
-                                        src={faker.internet.avatar()}
+                                        src={userCard4.picture}
                                     />
-                                    <Card.Header>{faker.name.findName()}</Card.Header>
-                                    <Card.Meta>Friends of Elliot</Card.Meta>
+                                    <Card.Header>{userCard4.name}</Card.Header>
+                                    <Card.Meta>Hair styling</Card.Meta>
                                     <Card.Description>
-                                        Steve wants to add you to the group <strong>best friends</strong>
+                                        Looking for web developer
                                     </Card.Description>
                                 </Card.Content>
                             </Card>
