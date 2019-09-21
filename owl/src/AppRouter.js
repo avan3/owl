@@ -13,8 +13,15 @@ export default class AppRouter extends Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  getLogin = (login) => {
+    console.log(login)
+    if (login === true) {
+      this.setState({activeItem: 'home'});
+    };
+  };
+
   render() {
-    const { activeItem } = this.state
+    const { activeItem } = this.state;
     return (
       <Router>
 
@@ -68,7 +75,7 @@ export default class AppRouter extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/about/" component={About} />
           <Route path="/user/" component={User} />
-          <Route path="/login/" component={Login} />
+          <Route path="/login/" component={() => <Login onGetLogin={this.getLogin} />}  />
         </div>
       </Router>
     )

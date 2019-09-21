@@ -10,12 +10,14 @@ export default class Login extends React.Component {
     state = {
         login: true,
         register: false,
-        loginSucess: false
+        loginSuccess: false
     }
 
+    submitForm = (e) => {
+        this.props.onGetLogin(true);
+    };
+
     render() {
-
-
         return (
             <Container style={{ paddingTop: '10%' }}>
 
@@ -31,7 +33,7 @@ export default class Login extends React.Component {
                             <Container className='loginCard'>
 
                                 {this.state.login === true ?
-                                    <Form>
+                                    <Form ref="form">
 
                                         <Form.Input
                                             icon='user'
@@ -47,7 +49,7 @@ export default class Login extends React.Component {
                                             placeholder='Password'
                                         />
 
-                                        <Button content='Login' primary as={Link} to='/user/' />
+                                        <Button type="submit" onClick={this.submitForm} content='Login' primary as={Link} to='/'/>
                                         <Button content='Register' onClick={() => this.setState({ register: true, login: false })} />
                                     </Form>
                                     : null}
