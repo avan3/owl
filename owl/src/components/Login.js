@@ -54,7 +54,6 @@ export default class Login extends React.Component {
                                     </Form>
                                     : null}
 
-
                                 {this.state.register === true ?
                                     <Form>
                                         <Form.Group>

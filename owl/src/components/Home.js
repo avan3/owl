@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import faker from 'faker';
 import { Menu, Segment, Input, Image, Container, Grid, Search, Header, Icon, Card } from 'semantic-ui-react';
- 
+
 
 const initialState = { isLoading: false, results: [], value: '' }
 
@@ -110,7 +110,8 @@ export default class Home extends React.Component {
 
                     <Grid.Row verticalAlign='center'>
 
-                        <Grid.Column width={4}>
+
+                        <Card.Group itemsPerRow={4}>
                             <Card>
                                 <Card.Content>
                                     <Image
@@ -120,14 +121,14 @@ export default class Home extends React.Component {
                                     />
                                     <Card.Header>{userCard1.name}</Card.Header>
                                     <Card.Meta>Guitar Lessons</Card.Meta>
-                                    <Card.Description>
-                                        Looking for swimming instructor
+                                    <Segment>
+                                        <Card.Description>
+                                            Looking for a swimming instructor
                                     </Card.Description>
+                                    </Segment>
                                 </Card.Content>
                             </Card>
-                        </Grid.Column>
 
-                        <Grid.Column width={4}>
                             <Card>
                                 <Card.Content>
                                     <Image
@@ -137,14 +138,14 @@ export default class Home extends React.Component {
                                     />
                                     <Card.Header>{userCard2.name}</Card.Header>
                                     <Card.Meta>Boxing</Card.Meta>
-                                    <Card.Description>
-                                        Looking for programmer
+                                    <Segment>
+                                        <Card.Description>
+                                            Looking for a programmer
                                     </Card.Description>
+                                    </Segment>
                                 </Card.Content>
                             </Card>
-                        </Grid.Column>
 
-                        <Grid.Column width={4}>
                             <Card>
                                 <Card.Content>
                                     <Image
@@ -154,14 +155,14 @@ export default class Home extends React.Component {
                                     />
                                     <Card.Header>{userCard3.name}</Card.Header>
                                     <Card.Meta>Web Development</Card.Meta>
-                                    <Card.Description>
-                                        Looking for haircut
+                                    <Segment>
+                                        <Card.Description>
+                                            Looking for a haircut
                                     </Card.Description>
+                                    </Segment>
                                 </Card.Content>
                             </Card>
-                        </Grid.Column>
 
-                        <Grid.Column width={4}>
                             <Card>
                                 <Card.Content>
                                     <Image
@@ -171,14 +172,14 @@ export default class Home extends React.Component {
                                     />
                                     <Card.Header>{userCard4.name}</Card.Header>
                                     <Card.Meta>Hair styling</Card.Meta>
-                                    <Card.Description>
-                                        Looking for web developer
+                                    <Segment>
+                                        <Card.Description>
+                                            Looking for web a developer
                                     </Card.Description>
+                                    </Segment>
                                 </Card.Content>
                             </Card>
-                        </Grid.Column>
-
-
+                        </Card.Group>
 
                     </Grid.Row>
 
