@@ -2,11 +2,13 @@
 
 from faker import Faker
 import json
+import urllib3
+import random
 
 def generateData():
 
     fake = Faker()
-
+    tags = ['fitness', 'badminton', 'development', 'tutor', 'languages', 'carpentry']
     data = []
 
     for i in range(500):
@@ -17,6 +19,7 @@ def generateData():
         elem['city'] = fake.city()
         elem['country'] = fake.country()
         elem['timezone'] = fake.timezone()
+        elem['tag'] = random.choice(tags)
     
         data.append(elem)
 
