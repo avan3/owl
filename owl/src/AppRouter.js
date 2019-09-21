@@ -18,10 +18,14 @@ export default class AppRouter extends Component {
     return (
       <Router>
 
-        <Container>
+        <Container style={{ backgroundColor: '#1F618D' }}>
           <Menu pointing secondary>
+            <Menu.Item>
+              <img src='/logo192.png' />
+            </Menu.Item>
 
             <Menu.Item
+              style={{ color: 'white' }}
               as={Link}
               to='/'
               name='home'
@@ -30,6 +34,7 @@ export default class AppRouter extends Component {
             />
 
             <Menu.Item
+              style={{ color: 'white' }}
               as={Link}
               to='/about/'
               name='about'
@@ -37,24 +42,25 @@ export default class AppRouter extends Component {
               onClick={this.handleItemClick}
             />
 
-            <Menu.Item
-              as={Link}
-              to='/user/'
-              name='user'
-              active={activeItem === 'user'}
-              onClick={this.handleItemClick}
-            />
-
             <Menu.Menu position='right'>
               <Menu.Item
+                style={{ color: 'white' }}
+                as={Link}
+                to='/user/'
+                name='user'
+                active={activeItem === 'user'}
+                onClick={this.handleItemClick}
+              />
+              <Menu.Item
+                style={{ color: 'white' }}
                 as={Link}
                 to='/login/'
                 name='login'
                 active={activeItem === 'login'}
                 onClick={this.handleItemClick}
               />
-
             </Menu.Menu>
+
           </Menu>
         </Container>
 
