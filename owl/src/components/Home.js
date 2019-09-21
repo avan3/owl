@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import faker from 'faker';
 import { Menu, Segment, Input, Image, Container, Grid, Search, Header, Icon, Card } from 'semantic-ui-react';
-
+ 
 
 const initialState = { isLoading: false, results: [], value: '' }
 
