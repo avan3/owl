@@ -9,17 +9,20 @@ import Login from './components/Login';
 
 export default class AppRouter extends Component {
 
-  state = { activeItem: 'home' }
+  state = { activeItem: 'home', loginSuccess: false }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   getLogin = (login) => {
     console.log(login)
     if (login === true) {
-      this.setState({activeItem: 'home'});
+      this.setState({activeItem: 'home', loginSuccess: true});
     };
   };
 
+  getLogout = () => {
+    this.setState({activeItem: 'home', loginSuccess: false});
+  }
   render() {
     const { activeItem } = this.state;
     return (
@@ -48,16 +51,8 @@ export default class AppRouter extends Component {
               active={activeItem === 'about'}
               onClick={this.handleItemClick}
             />
-
+            {this.state.loginSuccess === false ?
             <Menu.Menu position='right'>
-              <Menu.Item
-                style={{ color: 'white' }}
-                as={Link}
-                to='/user/'
-                name='user'
-                active={activeItem === 'user'}
-                onClick={this.handleItemClick}
-              />
               <Menu.Item
                 style={{ color: 'white' }}
                 as={Link}
@@ -66,8 +61,27 @@ export default class AppRouter extends Component {
                 active={activeItem === 'login'}
                 onClick={this.handleItemClick}
               />
+              </Menu.Menu>
+            : 
+            <Menu.Menu position='right'>
+              <Menu.Item
+                style={{ color: 'white' }}
+                as={Link}
+                to='/user/'
+                name='John Doe'
+                active={activeItem === 'John Doe'}
+                onClick={this.handleItemClick}
+              />
+              <Menu.Item
+                style={{ color: 'white' }}
+                as={Link}
+                to='/'
+                name='Logout'
+                active={activeItem === 'Logout'}
+                onClick={this.getLogout}
+              />
             </Menu.Menu>
-
+              }
           </Menu>
         </Container>
 

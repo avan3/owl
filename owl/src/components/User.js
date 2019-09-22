@@ -6,7 +6,6 @@ export default class User extends React.Component {
         return (
             <Container >
                 <Grid columns={3}>
-
                 </Grid>
             </Container>
         );

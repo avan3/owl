@@ -14,6 +14,7 @@ export default class Login extends React.Component {
     }
 
     submitForm = (e) => {
+        this.setState({loginSuccess: true});
         this.props.onGetLogin(true);
     };
 
@@ -49,7 +50,7 @@ export default class Login extends React.Component {
                                             placeholder='Password'
                                         />
 
-                                        <Button type="submit" onClick={this.submitForm} content='Login' primary as={Link} to='/'/>
+                                        <Button onClick={this.submitForm} content='Login' primary as={Link} to='/'/>
                                         <Button content='Register' onClick={() => this.setState({ register: true, login: false })} />
                                     </Form>
                                     : null}
