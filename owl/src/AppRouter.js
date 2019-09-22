@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Menu, Segment, Input, Image, Container } from 'semantic-ui-react';
+import { Menu, Segment, Input, Image, Container, Icon } from 'semantic-ui-react';
 import Home from './components/Home';
 import About from './components/About';
 import User from './components/User';
@@ -66,6 +66,7 @@ export default class AppRouter extends Component {
             <Menu.Menu position='right'>
               <Menu.Item
                 style={{ color: 'white' }}
+                icon="user"
                 as={Link}
                 to='/user/'
                 name='John Doe'
