@@ -9,14 +9,19 @@ import Login from './components/Login';
 
 export default class AppRouter extends Component {
 
-  state = { activeItem: 'home', loginSuccess: false }
+  state = { activeItem: 'home', loginSuccess: false, name: '' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-  getLogin = (login) => {
+  getLogin = (login, username) => {
     console.log(login)
     if (login === true) {
-      this.setState({activeItem: 'home', loginSuccess: true});
+      this.setState({
+        activeItem: 'home', 
+        loginSuccess: true,
+        name: username.split("_").join(" ")
+      });
+
     };
   };
 
@@ -24,7 +29,7 @@ export default class AppRouter extends Component {
     this.setState({activeItem: 'home', loginSuccess: false});
   }
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, name } = this.state;
     return (
       <Router>
 
@@ -69,8 +74,8 @@ export default class AppRouter extends Component {
                 icon="user"
                 as={Link}
                 to='/user/'
-                name='John Doe'
-                active={activeItem === 'John Doe'}
+                name={name}
+                active={activeItem === name}
                 onClick={this.handleItemClick}
               />
               <Menu.Item

@@ -10,12 +10,13 @@ export default class Login extends React.Component {
     state = {
         login: true,
         register: false,
-        loginSuccess: false
+        loginSuccess: false,
+        value: ''
     }
 
     submitForm = (e) => {
         this.setState({loginSuccess: true});
-        this.props.onGetLogin(true);
+        this.props.onGetLogin(true, this.state.value);
     };
 
     render() {
@@ -41,6 +42,8 @@ export default class Login extends React.Component {
                                             iconPosition='left'
                                             label='Username'
                                             placeholder='Username'
+                                            value={this.state.value}
+                                            onChange={(e) => {this.setState({value: e.target.value})}} 
                                         />
                                         <Form.Input
                                             icon='lock'
