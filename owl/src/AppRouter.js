@@ -14,7 +14,6 @@ export default class AppRouter extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   getLogin = (login, username) => {
-    console.log(login)
     if (login === true) {
       this.setState({
         activeItem: 'home', 
