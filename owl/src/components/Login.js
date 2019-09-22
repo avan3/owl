@@ -49,7 +49,7 @@ export default class Login extends React.Component {
                                             placeholder='Password'
                                         />
 
-                                        <Button type="submit" onClick={this.submitForm} content='Login' primary as={Link} to='/'/>
+                                        <Button onClick={this.submitForm} content='Login' primary as={Link} to='/' />
                                         <Button content='Register' onClick={() => this.setState({ register: true, login: false })} />
                                     </Form>
                                     : null}
@@ -85,7 +85,7 @@ export default class Login extends React.Component {
                                         </Form.Field>
 
                                         <Button content='Submit' primary onClick={() => this.setState({ login: true, register: false })} />
-                                        <Button icon='arrow left'  onClick={() => this.setState({ register: false, login: true })} />
+                                        <Button icon='arrow left' onClick={() => this.setState({ register: false, login: true })} />
                                     </Form>
                                     : null}
                             </Container>
