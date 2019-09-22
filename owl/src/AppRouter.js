@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Menu, Segment, Input, Image, Container } from 'semantic-ui-react';
+import { Menu, Segment, Input, Image, Container, Icon } from 'semantic-ui-react';
 import Home from './components/Home';
 import About from './components/About';
 import User from './components/User';
@@ -9,19 +9,27 @@ import Login from './components/Login';
 
 export default class AppRouter extends Component {
 
-  state = { activeItem: 'home' }
+  state = { activeItem: 'home', loginSuccess: false, name: '' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
-  getLogin = (login) => {
+  getLogin = (login, username) => {
     console.log(login)
     if (login === true) {
-      this.setState({activeItem: 'home'});
+      this.setState({
+        activeItem: 'home', 
+        loginSuccess: true,
+        name: username.split("_").join(" ")
+      });
+
     };
   };
 
+  getLogout = () => {
+    this.setState({activeItem: 'home', loginSuccess: false});
+  }
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, name } = this.state;
     return (
       <Router>
 
@@ -48,16 +56,8 @@ export default class AppRouter extends Component {
               active={activeItem === 'about'}
               onClick={this.handleItemClick}
             />
-
+            {this.state.loginSuccess === false ?
             <Menu.Menu position='right'>
-              <Menu.Item
-                style={{ color: 'white' }}
-                as={Link}
-                to='/user/'
-                name='user'
-                active={activeItem === 'user'}
-                onClick={this.handleItemClick}
-              />
               <Menu.Item
                 style={{ color: 'white' }}
                 as={Link}
@@ -66,8 +66,28 @@ export default class AppRouter extends Component {
                 active={activeItem === 'login'}
                 onClick={this.handleItemClick}
               />
+              </Menu.Menu>
+            : 
+            <Menu.Menu position='right'>
+              <Menu.Item
+                style={{ color: 'white' }}
+                icon="user"
+                as={Link}
+                to='/user/'
+                name={name}
+                active={activeItem === name}
+                onClick={this.handleItemClick}
+              />
+              <Menu.Item
+                style={{ color: 'white' }}
+                as={Link}
+                to='/'
+                name='Logout'
+                active={activeItem === 'Logout'}
+                onClick={this.getLogout}
+              />
             </Menu.Menu>
-
+              }
           </Menu>
         </Container>
 

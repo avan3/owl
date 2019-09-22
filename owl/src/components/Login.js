@@ -10,11 +10,13 @@ export default class Login extends React.Component {
     state = {
         login: true,
         register: false,
-        loginSuccess: false
+        loginSuccess: false,
+        value: ''
     }
 
     submitForm = (e) => {
-        this.props.onGetLogin(true);
+        this.setState({loginSuccess: true});
+        this.props.onGetLogin(true, this.state.value);
     };
 
     render() {
@@ -40,6 +42,8 @@ export default class Login extends React.Component {
                                             iconPosition='left'
                                             label='Username'
                                             placeholder='Username'
+                                            value={this.state.value}
+                                            onChange={(e) => {this.setState({value: e.target.value})}} 
                                         />
                                         <Form.Input
                                             icon='lock'
@@ -49,7 +53,11 @@ export default class Login extends React.Component {
                                             placeholder='Password'
                                         />
 
+<<<<<<< HEAD
                                         <Button onClick={this.submitForm} content='Login' primary as={Link} to='/' />
+=======
+                                        <Button onClick={this.submitForm} content='Login' primary as={Link} to='/'/>
+>>>>>>> 2de27fafc77c7a79d7f80add394362d9d2a47d2c
                                         <Button content='Register' onClick={() => this.setState({ register: true, login: false })} />
                                     </Form>
                                     : null}
