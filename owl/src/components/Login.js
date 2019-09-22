@@ -53,11 +53,7 @@ export default class Login extends React.Component {
                                             placeholder='Password'
                                         />
 
-<<<<<<< HEAD
-                                        <Button onClick={this.submitForm} content='Login' primary as={Link} to='/' />
-=======
                                         <Button onClick={this.submitForm} content='Login' primary as={Link} to='/'/>
->>>>>>> 2de27fafc77c7a79d7f80add394362d9d2a47d2c
                                         <Button content='Register' onClick={() => this.setState({ register: true, login: false })} />
                                     </Form>
                                     : null}
