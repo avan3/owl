@@ -47,14 +47,14 @@ export default class AppRouter extends Component {
               onClick={this.handleItemClick}
             />
 
-            <Menu.Item
+            {/* <Menu.Item
               style={{ color: 'white' }}
               as={Link}
               to='/about/'
               name='about'
               active={activeItem === 'about'}
               onClick={this.handleItemClick}
-            />
+            /> */}
             {this.state.loginSuccess === false ?
             <Menu.Menu position='right'>
               <Menu.Item
