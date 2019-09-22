@@ -108,10 +108,10 @@ export default class Home extends React.Component {
                         </Header>
                     </Grid.Row>
 
-                    <Grid.Row verticalAlign='center'>
+                    <Grid.Row verticalAlign='center' centered>
 
 
-                        <Card.Group itemsPerRow={4}>
+                        <Card.Group itemsPerRow={4} >
                             <Card>
                                 <Card.Content>
                                     <Image
